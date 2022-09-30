@@ -1,0 +1,36 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Walkthrough",
+  "steps": [
+    {
+      "file": "mkdocs.yml",
+      "description": "Start by adding `yamp` to register the mkdocs-yamp plugin for mkdocs",
+      "line": 56
+    },
+    {
+      "file": "mkdocs.yml",
+      "description": "Next, we'll start by adding a repository. \n\nIn this case, we define the `url` field to specify the git repository url we'd like to include.",
+      "line": 58
+    },
+    {
+      "file": "mkdocs.yml",
+      "description": "We can now reference files from the remote repository as if they were available locally. \n\nFiles get added to a `repos` directory by default. \nThe name of this directory can be modified through the mkdocs-yamp plugin configuration. \n\nThe subdirectory name within `repos` will be the name of the repository itself.\n\nSo to \"import\" the README, you would say `repos/mkdocs-yamp-demo-a/README.md`.",
+      "line": 70
+    },
+    {
+      "file": "mkdocs.yml",
+      "description": "Next, we'll pull in another repository but change the branch. \n\nWhen the `branch` configuration is omitted, the default is assumed to be `main`.\n\nIn this case, let's fetch the README.md from the `develop` branch",
+      "line": 59
+    },
+    {
+      "file": "mkdocs.yml",
+      "description": "With the new repository added, you can now add the new README to the navigation tree. ",
+      "line": 71
+    },
+    {
+      "title": "Run the documentation locally",
+      "description": "To build this documentation and view it locally in your browser, run:\n\n`just serve`\n\nYou'll need to install [just](https://github.com/casey/just) and have docker installed. \n\nThe documentation will be running at `https://localhost:8000`"
+    }
+  ],
+  "ref": "main"
+}

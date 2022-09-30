@@ -14,12 +14,6 @@ repo_url: https://github.com/boozallen/mkdocs-starter
 
 edit_uri: edit/main/docs/
 
-plugins:
-  - search: {}
-  - gen-files:
-      scripts:
-        - 'docs/add_glossary.py'
-
 extra_css:
   - css/extra.css
 
@@ -54,19 +48,27 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
+plugins:
+  - search: {}
+  - gen-files:
+      scripts:
+        - 'docs/add_glossary.py'
+  - yamp:
+      repos:
+      - url: https://github.com/boozallen/mkdocs-yamp-demo-a
+      - url: https://github.com/boozallen/mkdocs-yamp-demo-b
+        branch: develop
+
 # Page Tree
 nav:
   - Home: 'index.md'
   - Concepts:
     - 'concepts/overview.md'
-    - Section One:
-      - 'concepts/section-one/page-one.md'
-      - 'concepts/section-one/page-two.md'
-    - Section Two:
-      - 'concepts/section-two/page-one.md'
-      - 'concepts/section-two/page-two.md'
   - Reference:
     - 'reference/overview.md'
+    - Terraform Modules:
+      - repos/mkdocs-yamp-demo-a/README.md
+      - repos/mkdocs-yamp-demo-b/README.md
   - Tutorials:
     - 'tutorials/overview.md'
   - How-To Guides: 
